@@ -1,0 +1,142 @@
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <string.h>
+#include <stdio.h>
+#include <errno.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <netdb.h>
+#include <iostream>
+#include <fstream>
+#include <strings.h>
+#include <string>
+#include <pthread.h>
+#include <sstream>
+// question exit statuses?
+
+using namespace std;
+
+#define buffSize 1024
+#define portNum 40000
+static int clientSockfd;
+int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+void *comm(void *ptr);
+//*change from sock stream to data 
+
+
+int
+main(int atgc,const char* argv[]){
+  
+ 
+      pthread_t threads[15];
+      // create a socket using TCP IP
+    
+
+      // allow others to reuse the address
+      int yes= 1 ,ThreadCount = 0;
+        // int messageIn, reply ,len; 
+      struct sockaddr_in addr,serv;
+      socklen_t clientAddrSize = sizeof(addr);
+
+
+          if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1) {
+            perror("setsockopt");
+            return 1;
+          }
+
+
+
+      // bind address the socket to an ip addreess amd port 40000
+      
+      memset(addr.sin_zero, '\0', sizeof(addr.sin_zero));
+      memset(serv.sin_zero, '\0', sizeof(serv.sin_zero));
+
+      addr.sin_family = AF_INET;
+      addr.sin_port = htons(portNum);     // short, network byte order-convert from little to big endian
+      addr.sin_addr.s_addr = inet_addr("127.0.0.1"); // GIVE ANY ADDRESS 
+      
+
+            if (bind(sockfd, (struct sockaddr*)&serv, sizeof(addr)) == -1) {
+                perror("error binding to socket");
+                return 2;
+            }
+
+            
+
+
+      stringstream ss;
+
+      while (ThreadCount< 10 ){
+            
+            pthread_create(&threads[ThreadCount],NULL,comm,NULL);
+            ThreadCount++;
+        }
+      
+
+        for(int i = 0; i < 15; i++){
+            pthread_join(threads[i], NULL);
+          }
+
+       
+        return 0;
+    
+    
+}
+
+void *comm (void *pt )
+  {
+            sleep(1);
+
+            char buffer2[buffSize]  = {0};     
+            int messageIn, reply ,len; 
+            struct sockaddr_in addr,serv;
+            socklen_t clientAddrSize = sizeof(addr);
+            std::stringstream ss;
+            bool isEnd = false;
+
+             char ipstr[INET_ADDRSTRLEN] = {'\0'};
+             inet_ntop(addr.sin_family, &addr.sin_addr, ipstr, sizeof(ipstr));
+
+            
+
+          while (true){
+                // In a loop recv the message 
+                // process it
+                // if need to send updates send to whoever 
+            messageIn = recvfrom(sockfd, (char *)buffer2, buffSize, MSG_WAITALL,(struct sockaddr *) &addr, &clientAddrSize) ;
+            memset(buffer2, '\0', buffSize);
+
+            buffer2[messageIn] ='\0';
+
+              if (messageIn == -1) 
+                perror("Error receiving from client \n");
+              
+
+            ss << buffer2 << std::endl;
+            std::cout << buffer2 << std::endl;
+                
+
+            // as udp no reply necessry after reply , if we want any sort of ack/response here - may be useful testing
+
+            reply = sendto(sockfd,"ack",3 ,0 , (struct sockaddr *)&addr,sizeof(addr));
+
+             if (reply ==-1 ){
+                cout << "Error writing to the client "<< endl ; 
+               }
+
+            printf("Reply sent \n");
+
+            }
+
+        
+      close(clientSockfd);
+      pthread_exit(NULL);    
+
+
+}
+
+
