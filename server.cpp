@@ -194,4 +194,37 @@ void *comm (void *pt )
 
 }
 
+void BellmanFord(struct graph* g, int src)    
+{
+    int V = g->V;
+    int E = g->E;
+    
+    // Step 1: Initialize distances from src to all other vertices
+    // as INFINITE
+    for (int i = 0; i < MAX_ROUTERS; i++)
+    {
+        dvinfo[i].node = (char) (i+65);
+        dvinfo[i].shortestDist = 10000;
+        dvinfo[i].nextNode = -1;
+    }
+    
+    //Assuming A is first vertex and so on...
+    dvinfo[src%65].shortestDist = 0;
+
+    // Step 2: Relax all edges |V| - 1 times.
+    for (int i = 1; i <= V-1; i++)
+    {
+        for (int j = 0; j < E; j++)
+        {
+            int u = g->edges[j]->v1;
+            int v = g->edges[j]->v2;
+            int weight = g->edges[j]->weight;
+            //if (dist[u-65] != 10000 && dist[u-65] + weight < dist[v-65])
+            //    dist[v-65] = dist[u-65] + weight;
+            if(dvinfo[u%65].shortestDist != 10000 && dvinfo[u%65].shortestDist + weight < dvinfo[v%65].shortestDist) {
+                dvinfo[v%65].shortestDist = dvinfo[u%65].shortestDist + weight;
+                dvinfo[v%65].nextNode = dvinfo[u%65].node;
+            }
+        }
+    } 
 
