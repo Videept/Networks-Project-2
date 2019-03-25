@@ -16,7 +16,10 @@
 #include <string>
 #include <pthread.h>
 #include <sstream>
-// question exit statuses?
+/*  not finished - unsure if connecting output is all sebd messages 
+
+work in progress
+*/
 
 using namespace std;
 
@@ -57,10 +60,14 @@ main(int atgc,const char* argv[]){
 
       addr.sin_family = AF_INET;
       addr.sin_port = htons(portNum);     // short, network byte order-convert from little to big endian
-      addr.sin_addr.s_addr = inet_addr("127.0.0.1"); // GIVE ANY ADDRESS 
+      addr.sin_addr.s_addr =INADDR_ANY;  // GIVE ANY ADDRESS 
       
+     serv.sin_family = AF_INET;
+     serv.sin_port = htons(portNum);
+     serv.sin_addr.s_addr = INADDR_ANY; // inet_addr("127.0.0.1");
+   
 
-            if (bind(sockfd, (struct sockaddr*)&serv, sizeof(addr)) == -1) {
+      if (bind(sockfd, (struct sockaddr*)&serv, sizeof(addr)) == -1) {
                 perror("error binding to socket");
                 return 2;
             }
@@ -91,30 +98,76 @@ void *comm (void *pt )
   {
             sleep(1);
 
-            char buffer2[buffSize]  = {0};     
-            int messageIn, reply ,len; 
-            struct sockaddr_in addr,serv;
+            char buffer2[buffSize]  = {0}, buff [buffSize]={0};     
+            int messageIn, send , reply ,len,r2; 
+            struct sockaddr_in addr,peer;
+
             socklen_t clientAddrSize = sizeof(addr);
+            socklen_t peerAddrSize = sizeof(peer);
+
             std::stringstream ss;
             bool isEnd = false;
 
              char ipstr[INET_ADDRSTRLEN] = {'\0'};
              inet_ntop(addr.sin_family, &addr.sin_addr, ipstr, sizeof(ipstr));
-
+            int test_count=0;
             
 
           while (true){
                 // In a loop recv the message 
                 // process it
                 // if need to send updates send to whoever 
-            messageIn = recvfrom(sockfd, (char *)buffer2, buffSize, MSG_WAITALL,(struct sockaddr *) &addr, &clientAddrSize) ;
+            test_count ++; 
+                        bool isEnd = false;
+                        char buf[20] = {0};
+                        stringstream ss;
+                        string input;
+
+
+                       while (!isEnd) {
+                              memset( buf, '\0', sizeof(buf));
+
+                              cout << "send: ";
+                              cin >> input;
+
+                              /// change 
+                              if (sendto(sockfd,buff,sizeof(buff),0,(struct sockaddr *)&peer,peerAddrSize) == -1) {
+                                perror("send");
+                              //  return 4;
+                              }
+
+
+                              if (recvfrom(sockfd,buff,buffSize,0,(struct sockaddr *)&addr,&clientAddrSize) == -1){
+                                perror("recv");
+                                   //    return 5;
+                              }
+
+                              ss << buf << endl;
+                              cout << "echo: ";
+                              cout << buf << endl;
+
+                              if (ss.str() == "close\n")
+                                break;
+
+                              ss.str("");
+                  } // consider as client hanndeling 
+
+
+            // cout << "\n Enter message going to send "<< test_count <<  endl ;
+            // // fgets(buff,buffSize, stdin);
+            // // establishing sender - initialising message communication
+            // send = sendto(sockfd,buff,sizeof(buff),0,(struct sockaddr *)&peer,peerAddrSize);
+           
+            // should 
+            messageIn = recvfrom(sockfd, (char *)buffer2, buffSize, 0 ,(struct sockaddr *) &addr, &clientAddrSize) ;
+            
             memset(buffer2, '\0', buffSize);
 
             buffer2[messageIn] ='\0';
 
-              if (messageIn == -1) 
-                perror("Error receiving from client \n");
-              
+                if (messageIn == -1) 
+                  perror("Error receiving from client \n");
+                
 
             ss << buffer2 << std::endl;
             std::cout << buffer2 << std::endl;
@@ -124,11 +177,13 @@ void *comm (void *pt )
 
             reply = sendto(sockfd,"ack",3 ,0 , (struct sockaddr *)&addr,sizeof(addr));
 
-             if (reply ==-1 ){
-                cout << "Error writing to the client "<< endl ; 
-               }
+                if (reply ==-1 ){
+                    cout << "Error writing to the client "<< endl ; 
+                  }
 
-            printf("Reply sent \n");
+
+            // printf("Reply sent \n");
+            // r2= recvfrom(sockfd,buff,buffSize,0,(struct sockaddr *)&addr,&clientAddrSize);
 
             }
 
