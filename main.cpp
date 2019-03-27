@@ -2,7 +2,7 @@
 #include"Source.h"
 #include"SourceList.h"
 using namespace std;
-/*void printSource(Source source)
+/*void printSource(Source source)       
 {
 	//Source source("A B 10001 4");
 	cout<<source.getsource_router()<<" ";
@@ -10,11 +10,13 @@ using namespace std;
 	cout<<source.getsource_port()<<" ";
 	cout<<source.getlink_cost()<<" ";
 }*/
+
 int main(int argc, const char*argv[])
 {
 	
-	SourceList list("topology.txt");
-	if(!list.is_open())
+	SourceList list("topology.txt");//provide path of the file instead of filename.
+	
+	/*if(!list.is_open())
 	{
 	cout<<"ERROR:File OPEN";
 	}
@@ -32,7 +34,7 @@ int main(int argc, const char*argv[])
 		//std::cout<<source_router<<"  "<<dest_router<<"  "<<source_port<<"  "<<link_cost<<endl;
 		std::cout<<s_router<<"  "<<d_router<<"  "<<s_port<<"  "<<l_cost<<endl;
 	}
-	list.close();
+	list.close();*/
 }
 	for(Source s:list.sources)
 	printSource(s);
