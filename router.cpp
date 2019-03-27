@@ -15,7 +15,6 @@
 
 using namespace std;
 
-#define PORT 4000 
 #define MAXLINE 1024 
 
 struct sockaddr_in cliaddr, servaddr;
@@ -80,10 +79,37 @@ void receive_th() {
 	}
 }
 
+void costTable() {
+	// MAY NOT BE NEEDED
+	// Constructs and maintains table that
+	// contains cost to each node in the topology
+	// Initially filled with its own row from topology file
+
+}
+
+void routingTable() {
+	// Each outer maintains its own routing table
+	// A nxn matrix where n is the number of routers in topology
+	// Distance to itself is zero
+	// Initially distance to all other nodes is zero
+}
+
+void nextHopTable() {
+	// Constructs and maintains table that
+	// contains next hop which will be used to find 
+	// the next router to send the packet to 
+	// i.e. it will contain the next router along the
+	// shortest path to packets destination
+}
+
 void parseReceived() {
 	// In this function we will take what was received
 	// in buffer and parse the details.
 	// It will need to check if to see if there has been a change
+	// i.e if B says its distance X is 5 and we have distance to 
+	// X as 8. Check distance from A to B + 5 and if < 8 update
+	// Call bellman ford 
+
 	
 	// It will also need to detect if it received a DV or a packet
 	// IF Packet branch to 
@@ -92,6 +118,9 @@ void parseReceived() {
 
 void handlePacket() {
 	// Get DV up and running before tackling this 
+	// Will parse header to find destination router
+	// Use nextHopTable to find port to send the packet
+	// Send packet to this port 
 }
 
 void send_th() {
@@ -110,6 +139,10 @@ void send_th() {
 		// Here we will loop through our direct neighbours sending them a DV 
 		// every 5s 
 
+		// createDV();
+
+		// Send DV
+
 		sendto(udpfd, (const char*)message, sizeof(message), 0,
 			(struct sockaddr*)&cliaddr, sizeof(cliaddr));
 	}
@@ -120,12 +153,15 @@ void parseTopology() {
 	// From topology file we are only interested in direct neigbours
 	// We will receive other neighbours from exchanging DVs
 	// If sub string 0 is equal to A then parse that line etc
-
+	// i.e. parse only lies beginning with 'A'
+	// Store information in struct or class 
 }
 
-void createRoutingTable() {
-	// Parse information from toplogy and DV into table
-	// Use Bellman Ford to 
+void createDV() {
+	// Use information from routing table to create DV
+	// Take the row correlating to that router 
+	// Format of DV in Report 
+	// Single vector containing distances to all neighbour nodes
 }
 
 
@@ -136,10 +172,15 @@ int main(int argc, char *argv[])
 		//Check if a file has been entered as argument 
 		//Parse topology file
 		if (argv[1]) {
-			portnum = atoi(argv[1]);
+			portnum = atoi(argv[1]); // Using port number for initial testing
 			
 			//parseTopology();
 		}
+
+		/*if (argv[2]) {
+			// The second argument will contain the id of the router 
+			// we are setting up. i.e. A or B or C ....
+		}*/
 	}
 
 	// Set up thread so send and receive can run async
