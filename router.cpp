@@ -12,10 +12,12 @@
 #include <thread>
 #include <chrono>
 #include <pthread.h>
+#include<vector>
 
 using namespace std;
 
 #define MAXLINE 1024 
+#define MAX_ROUTERS 8
 
 struct sockaddr_in cliaddr, servaddr;
 int udpfd;
@@ -27,6 +29,35 @@ struct neighbour {
 	int port;
 	char id;
 };
+
+struct edge {
+    char v1;
+    char v2;
+    int weight;
+};
+
+struct graph {
+    int V, E;
+    vector<struct edge*> edges;
+};
+
+struct graph* maingraph;
+
+struct graph* initGraph () 
+{
+    struct graph* g = new graph;
+    g->E = 0;
+    g->V = 0;
+    g->edges.resize(0);
+    return g;
+}
+
+struct DV {
+    char node;
+    //int port;
+    int shortestDist;
+    char nextNode;
+}dvinfo[MAX_ROUTERS];
 
 
 // This function is continuously checking for information on socket
@@ -84,7 +115,6 @@ void costTable() {
 	// Constructs and maintains table that
 	// contains cost to each node in the topology
 	// Initially filled with its own row from topology file
-
 }
 
 void routingTable() {
@@ -183,6 +213,8 @@ int main(int argc, char *argv[])
 		}*/
 	}
 
+	maingraph = initGraph();
+
 	// Set up thread so send and receive can run async
 	thread dispatch(send_th);
 	thread recv(receive_th);
@@ -192,4 +224,40 @@ int main(int argc, char *argv[])
 	recv.join();
 	
 	
+}
+
+void BellmanFord(struct graph* g, int src)    
+{
+    int V = g->V;
+    int E = g->E;
+    
+    // Step 1: Initialize distances from src to all other vertices
+    // as INFINITE
+    
+	for (int i = 0; i < MAX_ROUTERS; i++)
+    {
+        dvinfo[i].node = (char) (i+65);
+        dvinfo[i].shortestDist = 10000;
+        dvinfo[i].nextNode = -1;
+    }
+    
+    //Assuming A is first vertex and so on...
+    dvinfo[src%65].shortestDist = 0;
+
+    // Step 2: Relax all edges |V| - 1 times.
+    for (int i = 1; i <= V-1; i++)
+    {
+        for (int j = 0; j < E; j++)
+        {
+            int u = g->edges[j]->v1;
+            int v = g->edges[j]->v2;
+            int weight = g->edges[j]->weight;
+            //if (dist[u-65] != 10000 && dist[u-65] + weight < dist[v-65])
+            //    dist[v-65] = dist[u-65] + weight;
+            if(dvinfo[u%65].shortestDist != 10000 && dvinfo[u%65].shortestDist + weight < dvinfo[v%65].shortestDist) {
+                dvinfo[v%65].shortestDist = dvinfo[u%65].shortestDist + weight;
+                dvinfo[v%65].nextNode = dvinfo[u%65].node;
+            }
+        }
+} 
 }
