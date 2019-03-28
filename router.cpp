@@ -259,5 +259,5 @@ void BellmanFord(struct graph* g, int src)
                 dvinfo[v%65].nextNode = dvinfo[u%65].node;
             }
         }
-} 
+	} 
 }
