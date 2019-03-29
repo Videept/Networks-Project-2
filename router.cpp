@@ -31,8 +31,8 @@ struct neighbour {
 };
 
 struct edge {
-    char v1;
-    char v2;
+    char src;
+    char dest;
     int weight;
 };
 
@@ -54,7 +54,6 @@ struct graph* initGraph ()
 
 struct DV {
     char node;
-    //int port;
     int shortestDist;
     char nextNode;
 }dvinfo[MAX_ROUTERS];
@@ -249,8 +248,8 @@ void BellmanFord(struct graph* g, int src)
     {
         for (int j = 0; j < E; j++)
         {
-            int u = g->edges[j]->v1;
-            int v = g->edges[j]->v2;
+            int u = g->edges[j]->src;
+            int v = g->edges[j]->dest;
             int weight = g->edges[j]->weight;
             //if (dist[u-65] != 10000 && dist[u-65] + weight < dist[v-65])
             //    dist[v-65] = dist[u-65] + weight;
@@ -260,4 +259,50 @@ void BellmanFord(struct graph* g, int src)
             }
         }
 	} 
+}
+
+void insertEdge(struct graph* g, char src, char dest, int weight) {
+    int flag = 0;
+    edge *e = (struct edge*)malloc(sizeof(struct edge));
+    e->src = src;
+    e->dest = dest;
+    e->weight = weight;
+    if(g->V == 0)	//if this is the first edge of our setup
+	{
+        g->E++;
+        g->V+=2;
+        g->edges.push_back(e);
+        cout<<"Properties of Added Edge: "<<g->edges[0]->src<<"->"<<g->edges[0]->dest<<" Weight: "<<g->edges[0]->weight;
+    }
+    else{
+        for(int i = 0; i<g->edges.size(); i++){     //If edge already exists, just update weight
+            if(g->edges[i]->src == src) {
+                if(g->edges[i]->dest == dest) {
+                    cout<<"Edge already exists"<<endl;
+                    flag = 1;
+                    if(g->edges[i]->weight != weight) {
+                        cout<<"Updating weight"<<endl;
+                        g->edges[i]->weight = weight;
+                        flag = 1;
+                    }
+                }             
+            }
+        }
+        if(flag == 0) {     //Adding edge if it doesn't already exist in the graph
+            int index, v1 = 1, v2= 1;            
+            g->E++;
+            g->edges.push_back(e);
+            for(int i = 0; i<g->edges.size(); i++)	//seeing if vertices have been previously defined
+            {
+                if(g->edges[i]->src == src|| g->edges[i]->dest == src)
+                    v1 = 0;
+                if(g->edges[i]->src == dest || g->edges[i]->dest == dest)
+                    v2 = 0;
+            }                
+            g->V = g->V + v1 + v2;
+            index = g->edges.size()-1;
+            cout<<"Inserted new edge***:"<<g->edges[index]->src<<"->"<<g->edges[index]->dest<<" W: "<<g->edges[index]->weight;
+        }
+    }
+    cout<<"\n";
 }
