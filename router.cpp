@@ -13,6 +13,8 @@
 #include <chrono>
 #include <pthread.h>
 #include<vector>
+#include <fstream> 
+#include <string.h>
 
 using namespace std;
 
@@ -21,19 +23,30 @@ using namespace std;
 
 struct sockaddr_in cliaddr, servaddr;
 int udpfd;
-int portnum;
 
 // Some sort of structure or class will be needed to keep details about 
 // immediate neighbours
-struct neighbour {
-	int port;
-	char id;
-};
+
+// Struct to hold router details
+struct node {
+     char letter ;
+     int pNum;  // port number 
+	 int numConnec; // number of neighbours it is connected to 
+   // sockaddr_in addr; 
+} node1; 
+
+
+// Details of neighbour routers
+struct neighbourNode{
+    char letter;
+    int pNum;
+    int cost;
+}neighbour[MAX_ROUTERS];
 
 struct edge {
     char src;
     char dest;
-    int weight;
+    int cost;
 };
 
 struct graph {
@@ -69,16 +82,19 @@ void receive_th() {
 	socklen_t len;	
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-	servaddr.sin_port = htons(portnum);
+	servaddr.sin_addr.s_addr = htonl(INADDR_ANY); //(INADDR_ANY);
+	servaddr.sin_port = htons(node1.pNum);
 
 	udpfd = socket(AF_INET, SOCK_DGRAM, 0);
+	if(bind(udpfd, (struct sockaddr*)&servaddr, sizeof(servaddr))==-1){
+			perror("Bind");
+		}
 	
 	for (;;) {
 		
 		
 		// binding server addr structure to udp sockfd 
-		bind(udpfd, (struct sockaddr*)&servaddr, sizeof(servaddr));
+		
 
 		// clear the descriptor set 
 		FD_ZERO(&rset);
@@ -100,7 +116,7 @@ void receive_th() {
 			// the DV and place details in routing table
 			//parseReceived(buffer);
 			
-			printf("\nMessage from UDP client: ");
+			printf("\nMessage from Router: ");
 			n = recvfrom(udpfd, buffer, sizeof(buffer), 0,
 				(struct sockaddr*)&cliaddr, &len);
 			puts(buffer);
@@ -154,14 +170,12 @@ void handlePacket() {
 
 void send_th() {
 
-	struct neighbour b = { .port = 4001 };
-	cliaddr.sin_port = htons(b.port);
-
+	
 	const char* message = "Hello Router";
 	for (;;) {
 
 		struct timeval t;
-		t.tv_sec = 5;
+		t.tv_sec = 10;
 		t.tv_usec = 0;
 		select(0, NULL, NULL, NULL, &t);
 
@@ -172,18 +186,67 @@ void send_th() {
 
 		// Send DV
 
-		sendto(udpfd, (const char*)message, sizeof(message), 0,
+		for(int i=0; i<node1.numConnec; i++){
+			cliaddr.sin_port = htons(neighbour[i].pNum);			
+			sendto(udpfd, (const char*)message, sizeof(message), 0,
 			(struct sockaddr*)&cliaddr, sizeof(cliaddr));
+			cout<<"Sent message to port: "<< neighbour[i].pNum<<endl; 
+
+		}
+
+		
 	}
 
 }
 
-void parseTopology() {
+void parseTopology(char* file) {
 	// From topology file we are only interested in direct neigbours
 	// We will receive other neighbours from exchanging DVs
 	// If sub string 0 is equal to A then parse that line etc
 	// i.e. parse only lies beginning with 'A'
 	// Store information in struct or class 
+
+	char letter,dest;
+	int portNum;
+	int cost;
+    char buffer[MAXLINE];
+    char createdRouters[MAX_ROUTERS];// not sure if needed
+
+    ifstream tableFile;
+    tableFile.open(file);
+
+    if (!tableFile){
+		cout << " Fail to open table topology file \n";
+	}
+    // reads in first line which is description
+    tableFile.getline(buffer,MAXLINE);
+
+   if (tableFile.is_open()){
+   
+
+        while (tableFile){
+            tableFile>> letter;
+
+            if (node1.letter == letter){
+                // if its A parse a and add 1 to number connections
+                node1.numConnec++; 
+                tableFile >>dest>> portNum >>cost ; 
+                
+                    neighbour[ node1.numConnec-1].letter=dest; neighbour[node1.numConnec-1].pNum =portNum;
+                    neighbour[node1.numConnec-1].cost=cost;
+            }
+            else {
+                tableFile.getline(buffer,MAXLINE);
+                memset(buffer,0,MAXLINE);
+            }
+            letter= '0';
+
+        }     
+   
+   }
+	cout << "\n FOR TEST , value of num connec = " <<node1.numConnec<<endl ;
+	tableFile.close();
+	
 }
 
 void createDV() {
@@ -193,37 +256,6 @@ void createDV() {
 	// Single vector containing distances to all neighbour nodes
 }
 
-
-int main(int argc, char *argv[])
-{
-	
-	if (argc > 1) {
-		//Check if a file has been entered as argument 
-		//Parse topology file
-		if (argv[1]) {
-			portnum = atoi(argv[1]); // Using port number for initial testing
-			
-			//parseTopology();
-		}
-
-		/*if (argv[2]) {
-			// The second argument will contain the id of the router 
-			// we are setting up. i.e. A or B or C ....
-		}*/
-	}
-
-	maingraph = initGraph();
-
-	// Set up thread so send and receive can run async
-	thread dispatch(send_th);
-	thread recv(receive_th);
-	
-	// Wait until
-	dispatch.join();
-	recv.join();
-	
-	
-}
 
 void BellmanFord(struct graph* g, int src)    
 {
@@ -250,39 +282,39 @@ void BellmanFord(struct graph* g, int src)
         {
             int u = g->edges[j]->src;
             int v = g->edges[j]->dest;
-            int weight = g->edges[j]->weight;
-            //if (dist[u-65] != 10000 && dist[u-65] + weight < dist[v-65])
-            //    dist[v-65] = dist[u-65] + weight;
-            if(dvinfo[u%65].shortestDist != 10000 && dvinfo[u%65].shortestDist + weight < dvinfo[v%65].shortestDist) {
-                dvinfo[v%65].shortestDist = dvinfo[u%65].shortestDist + weight;
+            int cost = g->edges[j]->cost;
+            //if (dist[u-65] != 10000 && dist[u-65] + cost < dist[v-65])
+            //    dist[v-65] = dist[u-65] + cost;
+            if(dvinfo[u%65].shortestDist != 10000 && dvinfo[u%65].shortestDist + cost < dvinfo[v%65].shortestDist) {
+                dvinfo[v%65].shortestDist = dvinfo[u%65].shortestDist + cost;
                 dvinfo[v%65].nextNode = dvinfo[u%65].node;
             }
         }
 	} 
 }
 
-void insertEdge(struct graph* g, char src, char dest, int weight) {
+void insertEdge(struct graph* g, char src, char dest, int cost) {
     int flag = 0;
     edge *e = (struct edge*)malloc(sizeof(struct edge));
     e->src = src;
     e->dest = dest;
-    e->weight = weight;
+    e->cost = cost;
     if(g->V == 0)	//if this is the first edge of our setup
 	{
         g->E++;
         g->V+=2;
         g->edges.push_back(e);
-        cout<<"Properties of Added Edge: "<<g->edges[0]->src<<"->"<<g->edges[0]->dest<<" Weight: "<<g->edges[0]->weight;
+        cout<<"Properties of Added Edge: "<<g->edges[0]->src<<"->"<<g->edges[0]->dest<<" cost: "<<g->edges[0]->cost;
     }
     else{
-        for(int i = 0; i<g->edges.size(); i++){     //If edge already exists, just update weight
+        for(int i = 0; i<g->edges.size(); i++){     //If edge already exists, just update cost
             if(g->edges[i]->src == src) {
                 if(g->edges[i]->dest == dest) {
                     cout<<"Edge already exists"<<endl;
                     flag = 1;
-                    if(g->edges[i]->weight != weight) {
-                        cout<<"Updating weight"<<endl;
-                        g->edges[i]->weight = weight;
+                    if(g->edges[i]->cost != cost) {
+                        cout<<"Updating cost"<<endl;
+                        g->edges[i]->cost = cost;
                         flag = 1;
                     }
                 }             
@@ -301,8 +333,51 @@ void insertEdge(struct graph* g, char src, char dest, int weight) {
             }                
             g->V = g->V + v1 + v2;
             index = g->edges.size()-1;
-            cout<<"Inserted new edge***:"<<g->edges[index]->src<<"->"<<g->edges[index]->dest<<" W: "<<g->edges[index]->weight;
+            cout<<"Inserted new edge***:"<<g->edges[index]->src<<"->"<<g->edges[index]->dest<<" W: "<<g->edges[index]->cost;
         }
     }
     cout<<"\n";
+}
+
+
+int main(int argc, char *argv[])
+{
+	char *filename;
+	char r_name;
+	
+	if (argc > 1) {
+		//Check if a file has been entered as argument 
+		
+		if (argv[1]) {
+			filename = argv[1]; 
+			
+		}
+
+		if (argv[2]) {
+			// The second argument will contain the id of the router 
+			// we are setting up. i.e. A or B or C ....
+			node1.letter = argv[2][0];
+		}
+	}
+	
+	// Convert letter to int port number 
+	node1.pNum = node1.letter + 9935; 
+	cout<<"Port Number: "<<node1.pNum<<endl;
+	
+	//Parse topology file
+	parseTopology(filename);
+
+
+	//maingraph = initGraph();
+
+	// Set up thread so send and receive can run async
+	thread recv(receive_th);
+	thread dispatch(send_th);
+	
+	
+	// Wait until
+	dispatch.join();
+	recv.join();
+	
+	
 }
