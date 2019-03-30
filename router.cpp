@@ -11,7 +11,6 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include <pthread.h>
 #include<vector>
 #include <fstream> 
 #include <string.h>
@@ -54,6 +53,12 @@ struct graph {
     vector<struct edge*> edges;
 };
 
+struct router
+{
+	char src;
+	int portnum;
+};
+
 struct graph* maingraph;
 
 struct graph* initGraph () 
@@ -67,9 +72,9 @@ struct graph* initGraph ()
 
 struct DV {
     char node;
-    int shortestDist;
+    int min_dist;
     char nextNode;
-}dvinfo[MAX_ROUTERS];
+}dvtable[MAX_ROUTERS];
 
 
 // This function is continuously checking for information on socket
@@ -270,13 +275,13 @@ void BellmanFord(struct graph* g, int src)
     
 	for (int i = 0; i < MAX_ROUTERS; i++)
     {
-        dvinfo[i].node = (char) (i+65);
-        dvinfo[i].shortestDist = 10000;
-        dvinfo[i].nextNode = -1;
+        dvtable[i].node = (char) (i+65);
+        dvtable[i].min_dist = 10000;
+        dvtable[i].nextNode = -1;
     }
     
     //Assuming A is first vertex and so on...
-    dvinfo[src%65].shortestDist = 0;
+    dvtable[src%65].min_dist = 0;
 
     // Step 2: Relax all edges |V| - 1 times.
     for (int i = 1; i <= V-1; i++)
@@ -288,9 +293,9 @@ void BellmanFord(struct graph* g, int src)
             int cost = g->edges[j]->cost;
             //if (dist[u-65] != 10000 && dist[u-65] + cost < dist[v-65])
             //    dist[v-65] = dist[u-65] + cost;
-            if(dvinfo[u%65].shortestDist != 10000 && dvinfo[u%65].shortestDist + cost < dvinfo[v%65].shortestDist) {
-                dvinfo[v%65].shortestDist = dvinfo[u%65].shortestDist + cost;
-                dvinfo[v%65].nextNode = dvinfo[u%65].node;
+            if(dvtable[u%65].min_dist != 10000 && dvtable[u%65].min_dist + cost < dvtable[v%65].min_dist) {
+                dvtable[v%65].min_dist = dvtable[u%65].min_dist + cost;
+                dvtable[v%65].nextNode = dvtable[u%65].node;
             }
         }
 	} 
@@ -340,6 +345,32 @@ void insertEdge(struct graph* g, char src, char dest, int cost) {
         }
     }
     cout<<"\n";
+}
+
+void writeDVtable()
+{
+	fstream file;
+	char base='A';
+	router exrouter;
+	char src(exrouter.src);
+	string createtable= src+"table.txt";
+	file.open(createtable,ios::out); 
+	if(!file) 
+   { 
+       cout<<"Error in creating file!!!";
+   }
+   if(file.is_open())
+   {
+	   for(int i=0;i<MAX_ROUTERS;i++)
+	   {
+		   if(dvtable[i].node!=exrouter.src)
+				file<<dvtable[i].node<<"\t"<<dvtable[i].min_dist<<1000+int(src)-int(base)<<1000+int(dvtable[1].node)-int(base)<<"\n";
+	   }
+   }
+   else
+   {
+	   cout<<"Error in writing to file";
+   } 
 }
 
 
