@@ -92,7 +92,10 @@ void receive_th() {
 	
 	for (;;) {
 		
-		
+		struct timeval t;
+		t.tv_sec = 5;
+		t.tv_usec = 0;
+
 		// binding server addr structure to udp sockfd 
 		
 
@@ -103,7 +106,7 @@ void receive_th() {
 		maxfdp1 = udpfd;
 		FD_SET(udpfd, &rset);
 
-		if ((nready = select(maxfdp1 + 1, &rset, NULL, NULL, NULL)) == -1) {
+		if ((nready = select(maxfdp1 + 1, &rset, NULL, NULL, &t)) == -1) {
 			perror("select");
 		}
 
