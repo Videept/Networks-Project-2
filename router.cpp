@@ -14,6 +14,7 @@
 #include<vector>
 #include <fstream> 
 #include <string.h>
+#include<time.h>
 
 using namespace std;
 
@@ -257,13 +258,6 @@ void parseTopology(char* file) {
 	
 }
 
-void createDV() {
-	// Use information from routing table to create DV
-	// Take the row correlating to that router 
-	// Format of DV in Report 
-	// Single vector containing distances to all neighbour nodes
-}
-
 
 void BellmanFord(struct graph* g, int src)    
 {
@@ -347,8 +341,42 @@ void insertEdge(struct graph* g, char src, char dest, int cost) {
     cout<<"\n";
 }
 
-void writeDVtable()
+void forwardingtable()
 {
+	fstream file;
+	char base='A';
+	router exrouter;
+	char src(exrouter.src);
+	string createtable= "Routing-output"+src;
+	file.open(createtable,ios::out); 
+	if(!file) 
+   { 
+       cout<<"Error in creating file!!!";
+   }
+   // declaring argument of time() 
+    time_t my_time = time(NULL); 
+  
+    // ctime() used to give the present time 
+    printf("%s", ctime(&my_time)); 
+
+   if(file.is_open())
+   {
+	   file<<"Destination"<<"\t"<<"Cost"<<"\t"<<"Outgoing UDP Port"<<"\t"<<"Destination UDP Port";
+	   for(int i=0;i<MAX_ROUTERS;i++)
+	   {
+		   if(dvtable[i].node!=exrouter.src)
+				file<<dvtable[i].node<<"\t"<<dvtable[i].min_dist<<1000+int(src)-int(base)<<1000+int(dvtable[1].node)-int(base)<<"\n";
+	   }
+   }
+   else
+   {
+	   cout<<"Error in writing to file";
+   } 
+}
+
+void createDV() 
+{
+	{
 	fstream file;
 	char base='A';
 	router exrouter;
@@ -372,6 +400,7 @@ void writeDVtable()
    {
 	   cout<<"Error in writing to file";
    } 
+}
 }
 
 
