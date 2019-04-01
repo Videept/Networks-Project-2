@@ -276,7 +276,7 @@ void BellmanFord(struct graph* g, int src)
 	for (int i = 0; i < MAX_ROUTERS; i++)
     {
         dvtable[i].node = (char) (i+65);
-        dvtable[i].min_dist = 10000;
+        dvtable[i].min_dist = 1000000;
         dvtable[i].nextNode = -1;
     }
     
@@ -361,6 +361,7 @@ void writeDVtable()
    }
    if(file.is_open())
    {
+	   file<<"Destination"<<"\t"<<"Cost"<<"\t"<<"Outgoing UDP Port"<<"\t"<<"Destination UDP Port";
 	   for(int i=0;i<MAX_ROUTERS;i++)
 	   {
 		   if(dvtable[i].node!=exrouter.src)
