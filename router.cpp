@@ -78,6 +78,13 @@ struct DV {
 }dvtable[MAX_ROUTERS];
 
 
+void printgraph(struct graph* g)
+{
+	for(int i=0;i<g->edges.size();i++)
+	{
+		cout<<"Starting node:"<<g->edges[i]->src<<"Ending node:"<<g->edges[i]->dest<<"Weight"<<g->edges[i]->cost;
+	}
+}
 // This function is continuously checking for information on socket
 void receive_th() {  
 	
@@ -357,7 +364,7 @@ void forwardingtable()
     time_t my_time = time(NULL); 
   
     // ctime() used to give the present time 
-    printf("%s", ctime(&my_time)); 
+    printf("Time of update is %s", ctime(&my_time)); 
 
    if(file.is_open())
    {
@@ -374,7 +381,6 @@ void forwardingtable()
 	   cout<<"Error in writing to file";
    } 
 }
-
 
 int main(int argc, char *argv[])
 {
