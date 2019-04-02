@@ -361,6 +361,7 @@ void forwardingtable()
 
    if(file.is_open())
    {
+	   file<<"DV Source"<<exrouter.src<<endl;
 	   file<<"Destination"<<"\t"<<"Cost"<<"\t"<<"Outgoing UDP Port"<<"\t"<<"Destination UDP Port";
 	   for(int i=0;i<MAX_ROUTERS;i++)
 	   {
@@ -372,35 +373,6 @@ void forwardingtable()
    {
 	   cout<<"Error in writing to file";
    } 
-}
-
-void createDV() 
-{
-	{
-	fstream file;
-	char base='A';
-	router exrouter;
-	char src(exrouter.src);
-	string createtable= src+"table.txt";
-	file.open(createtable,ios::out); 
-	if(!file) 
-   { 
-       cout<<"Error in creating file!!!";
-   }
-   if(file.is_open())
-   {
-	   file<<"Destination"<<"\t"<<"Cost"<<"\t"<<"Outgoing UDP Port"<<"\t"<<"Destination UDP Port";
-	   for(int i=0;i<MAX_ROUTERS;i++)
-	   {
-		   if(dvtable[i].node!=exrouter.src)
-				file<<dvtable[i].node<<"\t"<<dvtable[i].min_dist<<1000+int(src)-int(base)<<1000+int(dvtable[1].node)-int(base)<<"\n";
-	   }
-   }
-   else
-   {
-	   cout<<"Error in writing to file";
-   } 
-}
 }
 
 
