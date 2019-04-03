@@ -1,4 +1,4 @@
-#include <arpa/inet.h> 
+include <arpa/inet.h> 
 #include <errno.h> 
 #include <netinet/in.h> 
 #include <signal.h> 
@@ -18,12 +18,14 @@
 
 using namespace std;
 
-#define MAXLINE 1024 
+#define MAXLINE 1600 
 #define MAX_ROUTERS 8
 
 struct sockaddr_in cliaddr, servaddr;
 int udpfd;
 
+string createDV();
+void insertEdge(struct graph* g, char src, char dest, int cost);
 // Some sort of structure or class will be needed to keep details about 
 // immediate neighbours
 
@@ -60,8 +62,8 @@ struct router
 	int portnum;
 };
 
-struct graph* maingraph;
-
+//struct graph* maingraph;
+graph *g = (struct graph*)malloc(sizeof(struct graph));
 struct graph* initGraph () 
 {
     struct graph* g = new graph;
@@ -77,14 +79,53 @@ struct DV {
     char nextNode;
 }dvtable[MAX_ROUTERS];
 
+/*initDV(){
+	dvtable = (dvtable)malloc(sizeof(dvtable));
+	dvtable->node = (char*)malloc(sizeof(char)*n);
+	dvtable->values = (char*)malloc(sizeof(char)*n);
+}*/
 
-void printgraph(struct graph* g)
-{
-	for(int i=0;i<g->edges.size();i++)
-	{
-		cout<<"Starting node:"<<g->edges[i]->src<<"Ending node:"<<g->edges[i]->dest<<"Weight"<<g->edges[i]->cost;
-	}
+
+void parseReceived(char buff[MAXLINE]) {
+	// In this function we will take what was received
+	// in buffer and parse the details.
+	// It will need to check if to see if there has been a change- call add edge 
+  
+	string source,dest,tempCost;
+	int cost;
+	string s(buff);
+	
+	int curr = s.find("("); 
+	s.erase(0,curr+1);
+
+		for (int count =0; count< MAX_ROUTERS;count++){
+		
+				// take in the source 
+					curr = s.find(","); 
+					source =s.substr(0,curr);
+					s.erase(0,curr+1);
+				//take in the destination 
+					curr =s.find(",");
+					dest=s.substr(0,curr);
+					s.erase(0,curr+1);
+				// read in the cost 
+					curr = s.find(")");
+					tempCost=s.substr(0,curr);
+					cost=stoi(tempCost);
+					s.erase(0,curr+1);
+
+				// reset to after next bracket 
+					curr = s.find("(");
+					s.erase(0,curr+1);
+				// test parse received
+				//cout<<count <<"Source:"<<source <<" dest "<<dest <<"Cost "<< cost <<endl;
+				insertEdge(g,source,dest,cost);
+			}
+
+
+	// handlePacket(buffer)
 }
+
 // This function is continuously checking for information on socket
 void receive_th() {  
 	
@@ -130,13 +171,13 @@ void receive_th() {
 			
 			// From here we will branch to function that will parse 
 			// the DV and place details in routing table
-			//parseReceived(buffer);
+			
 			
 			printf("\nMessage from Router: ");
 			n = recvfrom(udpfd, buffer, sizeof(buffer), 0,
 				(struct sockaddr*)&cliaddr, &len);
 			puts(buffer);
-
+			parseReceived(buffer);
 		}
 	}
 }
@@ -163,19 +204,7 @@ void nextHopTable() {
 	// shortest path to packets destination
 }
 
-void parseReceived() {
-	// In this function we will take what was received
-	// in buffer and parse the details.
-	// It will need to check if to see if there has been a change
-	// i.e if B says its distance X is 5 and we have distance to 
-	// X as 8. Check distance from A to B + 5 and if < 8 update
-	// Call bellman ford 
 
-	
-	// It will also need to detect if it received a DV or a packet
-	// IF Packet branch to 
-	// handlePacket(buffer)
-}
 
 void handlePacket() {
 	// Get DV up and running before tackling this 
@@ -197,14 +226,15 @@ void send_th() {
 
 		// Here we will loop through our direct neighbours sending them a DV 
 		// every 5s 
-
-		// createDV();
+		string message;
+		
+		message = createDV();
 
 		// Send DV
 
 		for(int i=0; i<node1.numConnec; i++){
 			cliaddr.sin_port = htons(neighbour[i].pNum);			
-			sendto(udpfd, (const char*)message, sizeof(message), 0,
+			sendto(udpfd, message.c_str(), message.length(), 0,
 			(struct sockaddr*)&cliaddr, sizeof(cliaddr));
 			cout<<"Sent message to port: "<< neighbour[i].pNum<<endl; 
 
@@ -265,6 +295,27 @@ void parseTopology(char* file) {
 	
 }
 
+string createDV() {
+	// Use information from routing table to create DV
+	// Take the row correlating to that router 
+	// Format of DV in Report 
+	// Single vector containing distances to all neighbour nodes
+	string DV = "DV ";
+	string bracket = "(";
+	string bracket1 = ")";
+	string comma = ",";
+	for (int i = 0; i < MAX_ROUTERS; i++) {
+	
+		DV = DV + bracket +node1.letter + comma + dvtable[i].node + comma + to_string(dvtable[i].min_dist) + bracket1;
+		
+	}
+	//cout << DV;
+
+	return DV;
+	
+
+}
+
 
 void BellmanFord(struct graph* g, int src)    
 {
@@ -277,7 +328,7 @@ void BellmanFord(struct graph* g, int src)
 	for (int i = 0; i < MAX_ROUTERS; i++)
     {
         dvtable[i].node = (char) (i+65);
-        dvtable[i].min_dist = 1000000;
+        dvtable[i].min_dist = 10000;
         dvtable[i].nextNode = -1;
     }
     
@@ -335,14 +386,14 @@ void insertEdge(struct graph* g, char src, char dest, int cost) {
             g->edges.push_back(e);
             for(int i = 0; i<g->edges.size(); i++)	//seeing if vertices have been previously defined
             {
-                if(g->edges[i]->src == src|| g->edges[i]->dest == src)
+                if(g->edges[i]->src == src|| g->edges[i]->dest == dest)
                     v1 = 0;
-                if(g->edges[i]->src == dest || g->edges[i]->dest == dest)
+                if(g->edges[i]->src == dest || g->edges[i]->dest == src)
                     v2 = 0;
             }                
             g->V = g->V + v1 + v2;
             index = g->edges.size()-1;
-            cout<<"Inserted new edge***:"<<g->edges[index]->src<<"->"<<g->edges[index]->dest<<" W: "<<g->edges[index]->cost;
+            cout<<"Inserted new edge***:"<<g->edges[index]->src<<"->"<<g->edges[index]->dest<<" W: "<<g->edges[index]->cost<<endl;
         }
     }
     cout<<"\n";
@@ -382,6 +433,25 @@ void forwardingtable()
    } 
 }
 
+void writedvtable(char src) {
+        cout<<"ROUTER SHORTEST_DISTANCE PREV_NODE\n";
+        for(int i = 0; i<MAX_ROUTERS; i++){
+            if(dvtable[i].node!=-1) {
+                if(dvtable[i].node == src)
+                    cout << dvtable[i].node<<"\t\t\t"<< dvtable[i].min_dist << "\t\t\t\t*\n";
+                else
+                    cout << dvtable[i].node<<"\t\t\t"<< dvtable[i].min_dist << "\t\t\t\t" << dvtable[i].nextNode << "\n";
+            }
+        }
+}
+
+void printgraph(struct graph* g){
+	
+	for (int i = 0; i < g->edges.size(); i++){
+		cout << "Starting node: " << g->edges[i]->src << " Ending node:C" << g->edges[i]->dest << " Weight " << g->edges[i]->cost<<endl;
+	}
+}
+
 int main(int argc, char *argv[])
 {
 	char *filename;
@@ -409,13 +479,31 @@ int main(int argc, char *argv[])
 	//Parse topology file
 	parseTopology(filename);
 
+	initGraph();
+
+	for (int i = 0; i < node1.numConnec; i++) {
+		insertEdge(g, node1.letter, neighbour[i].letter, neighbour[i].cost);
+	}
+	//insertEdge(g, 'B', 'C', 5);
+	//insertEdge(g, 'C', 'D', 2);
+
+	printgraph(g);
+
+	BellmanFord(g, node1.letter);
+
+	for (int i = 0; i < MAX_ROUTERS; i++) {
+		cout << " Node " << dvtable[i].node << " Dist: " << dvtable[i].min_dist << " Next: " << dvtable[i].nextNode << endl;
+	}
+
+	//createDV();
+
 
 	//maingraph = initGraph();
 
 	// Set up thread so send and receive can run async
 	thread recv(receive_th);
 	thread dispatch(send_th);
-	
+	cout << g->V << endl;
 	
 	// Wait until
 	dispatch.join();
