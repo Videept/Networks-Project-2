@@ -423,3 +423,15 @@ int main(int argc, char *argv[])
 	
 	
 }
+
+void writedvtable(char src) {
+        cout<<"ROUTER SHORTEST_DISTANCE PREV_NODE\n";
+        for(int i = 0; i<MAX_ROUTERS; i++){
+            if(dvtable[i].node!=-1) {
+                if(dvtable[i].node == src)
+                    cout << dvtable[i].node<<"\t\t\t"<< dvtable[i].min_dist << "\t\t\t\t*\n";
+                else
+                    cout << dvtable[i].node<<"\t\t\t"<< dvtable[i].min_dist << "\t\t\t\t" << dvtable[i].nextNode << "\n";
+            }
+        }
+}
