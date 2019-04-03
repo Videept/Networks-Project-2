@@ -1,0 +1,35 @@
+
+
+
+void parseReceived(char buff[MAXLINE]) {
+	// In this function we will take what was received
+	// in buffer and parse the details.
+	// It will need to check if to see if there has been a change- call add edge 
+  
+	char source,dest;
+	int cost;
+  
+		if (buff[0]=='D'){
+		// ignore first three chars are ignore
+	   	cout << "Distance vector packet \n "; 
+			
+			for (int i=2;i<MAXLINE;i++){
+          i++;// (
+          source=buff[i];// source
+          i++;// ,
+          dest=buff[i];
+          i++; //,
+          cost;
+          i++; // ) 
+          //(struct graph* g, char src, char dest, int cost)
+          insertEdge(g,source,dest,cost);
+			}
+
+		}
+	else{
+		cout << "Packet received \n \n " ; 
+    // IF Packet branch to 
+	} 
+
+	// handlePacket(buffer)
+}
