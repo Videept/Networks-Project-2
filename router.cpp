@@ -14,16 +14,15 @@
 #include<vector>
 #include <fstream> 
 #include <string.h>
+#include<time.h>
 
 using namespace std;
 
-#define MAXLINE 1600 
+#define MAXLINE 1024 
 #define MAX_ROUTERS 8
 
 struct sockaddr_in cliaddr, servaddr;
 int udpfd;
-
-string createDV();
 
 // Some sort of structure or class will be needed to keep details about 
 // immediate neighbours
@@ -61,8 +60,8 @@ struct router
 	int portnum;
 };
 
-//struct graph* maingraph;
-graph *g = (struct graph*)malloc(sizeof(struct graph));
+struct graph* maingraph;
+
 struct graph* initGraph () 
 {
     struct graph* g = new graph;
@@ -79,6 +78,13 @@ struct DV {
 }dvtable[MAX_ROUTERS];
 
 
+void printgraph(struct graph* g)
+{
+	for(int i=0;i<g->edges.size();i++)
+	{
+		cout<<"Starting node:"<<g->edges[i]->src<<"Ending node:"<<g->edges[i]->dest<<"Weight"<<g->edges[i]->cost;
+	}
+}
 // This function is continuously checking for information on socket
 void receive_th() {  
 	
@@ -191,15 +197,14 @@ void send_th() {
 
 		// Here we will loop through our direct neighbours sending them a DV 
 		// every 5s 
-		string message;
-		
-		message = createDV();
+
+		// createDV();
 
 		// Send DV
 
 		for(int i=0; i<node1.numConnec; i++){
 			cliaddr.sin_port = htons(neighbour[i].pNum);			
-			sendto(udpfd, message.c_str(), message.length(), 0,
+			sendto(udpfd, (const char*)message, sizeof(message), 0,
 			(struct sockaddr*)&cliaddr, sizeof(cliaddr));
 			cout<<"Sent message to port: "<< neighbour[i].pNum<<endl; 
 
@@ -260,27 +265,6 @@ void parseTopology(char* file) {
 	
 }
 
-string createDV() {
-	// Use information from routing table to create DV
-	// Take the row correlating to that router 
-	// Format of DV in Report 
-	// Single vector containing distances to all neighbour nodes
-	string DV = "DV ";
-	string bracket = "(";
-	string bracket1 = ")";
-	string comma = ",";
-	for (int i = 0; i < g->V; i++) {
-	
-		DV = DV + bracket + dvtable[i].node + comma + to_string(dvtable[i].min_dist) + bracket1;
-		
-	}
-	//cout << DV;
-
-	return DV;
-	
-
-}
-
 
 void BellmanFord(struct graph* g, int src)    
 {
@@ -293,7 +277,7 @@ void BellmanFord(struct graph* g, int src)
 	for (int i = 0; i < MAX_ROUTERS; i++)
     {
         dvtable[i].node = (char) (i+65);
-        dvtable[i].min_dist = 10000;
+        dvtable[i].min_dist = 1000000;
         dvtable[i].nextNode = -1;
     }
     
@@ -351,33 +335,41 @@ void insertEdge(struct graph* g, char src, char dest, int cost) {
             g->edges.push_back(e);
             for(int i = 0; i<g->edges.size(); i++)	//seeing if vertices have been previously defined
             {
-                if(g->edges[i]->src == src|| g->edges[i]->dest == dest)
+                if(g->edges[i]->src == src|| g->edges[i]->dest == src)
                     v1 = 0;
-                if(g->edges[i]->src == dest || g->edges[i]->dest == src)
+                if(g->edges[i]->src == dest || g->edges[i]->dest == dest)
                     v2 = 0;
             }                
             g->V = g->V + v1 + v2;
             index = g->edges.size()-1;
-            cout<<"Inserted new edge***:"<<g->edges[index]->src<<"->"<<g->edges[index]->dest<<" W: "<<g->edges[index]->cost<<endl;
+            cout<<"Inserted new edge***:"<<g->edges[index]->src<<"->"<<g->edges[index]->dest<<" W: "<<g->edges[index]->cost;
         }
     }
     cout<<"\n";
 }
 
-void writeDVtable()
+void forwardingtable()
 {
 	fstream file;
 	char base='A';
 	router exrouter;
 	char src(exrouter.src);
-	string createtable= src+"table.txt";
+	string createtable= "Routing-output"+src;
 	file.open(createtable,ios::out); 
 	if(!file) 
    { 
        cout<<"Error in creating file!!!";
    }
+   // declaring argument of time() 
+    time_t my_time = time(NULL); 
+  
+    // ctime() used to give the present time 
+    printf("Time of update is %s", ctime(&my_time)); 
+
    if(file.is_open())
    {
+	   file<<"DV Source"<<exrouter.src<<endl;
+	   file<<"Destination"<<"\t"<<"Cost"<<"\t"<<"Outgoing UDP Port"<<"\t"<<"Destination UDP Port";
 	   for(int i=0;i<MAX_ROUTERS;i++)
 	   {
 		   if(dvtable[i].node!=exrouter.src)
@@ -388,13 +380,6 @@ void writeDVtable()
    {
 	   cout<<"Error in writing to file";
    } 
-}
-
-void printgraph(struct graph* g){
-	
-	for (int i = 0; i < g->edges.size(); i++){
-		cout << "Starting node: " << g->edges[i]->src << " Ending node:C" << g->edges[i]->dest << " Weight " << g->edges[i]->cost<<endl;
-	}
 }
 
 int main(int argc, char *argv[])
@@ -424,31 +409,13 @@ int main(int argc, char *argv[])
 	//Parse topology file
 	parseTopology(filename);
 
-	initGraph();
-
-	for (int i = 0; i < node1.numConnec; i++) {
-		insertEdge(g, node1.letter, neighbour[i].letter, neighbour[i].cost);
-	}
-	//insertEdge(g, 'B', 'C', 5);
-	//insertEdge(g, 'C', 'D', 2);
-
-	printgraph(g);
-
-	BellmanFord(g, node1.letter);
-
-	for (int i = 0; i < MAX_ROUTERS; i++) {
-		cout << " Node " << dvtable[i].node << " Dist: " << dvtable[i].min_dist << " Next: " << dvtable[i].nextNode << endl;
-	}
-
-	//createDV();
-
 
 	//maingraph = initGraph();
 
 	// Set up thread so send and receive can run async
 	thread recv(receive_th);
 	thread dispatch(send_th);
-	cout << g->V << endl;
+	
 	
 	// Wait until
 	dispatch.join();
