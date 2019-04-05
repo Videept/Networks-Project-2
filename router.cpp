@@ -53,7 +53,7 @@ struct neighbourNode {
 	char letter;
 	int pNum;
 	int cost;
-	time_t time;
+	time_t time; 
 }neighbour[MAX_ROUTERS];
 
 struct edge {
@@ -127,7 +127,7 @@ void parseReceived(char buff[MAXLINE]) {
 			sor = source[0];
 			// update struct time
 			updateTime(sor);
-			reAppear(sor,cost);
+			reAppear(sor,cost); // check if a reappearing node- only receive message from direct neighbours
 
 			des = dest[0];
 			// reset to after next bracket 
@@ -196,7 +196,7 @@ void checkTime_th() {
 		time_t time_1;
 		time(&time_1);
 		for (int i = 0; i < node1.numConnec; i++) {
-			if ((time_1 - neighbour[i].time) > 20) {
+			if ((time_1 - neighbour[i].time) > 60) {
 				cout << "Router " << neighbour[i].letter << " No longer available"<<endl;
 				removeNode(i);
 			}
@@ -306,6 +306,8 @@ void handlePacket(char buffer[MAXLINE]) {
 	// Will parse header to find destination router
 	// Use nextHopTable to find port to send the packet
 	// Send packet to this port 
+
+	//forwards to the next node-parse to find destination
 	int cur;
 	string destPort;
 
@@ -476,6 +478,8 @@ void BellmanFord(struct graph* g, int src)
 }
 
 int findNext(int destP) {
+	// ROUTES THROUGH ALL PREVIous to find next node 
+
 	int port = destP - 10000;
 	char a, b;
 	b = dvtable[port].nextNode;
