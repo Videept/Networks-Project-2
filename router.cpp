@@ -88,6 +88,16 @@ struct graph* initGraph()
 	return g;
 }
 
+struct graph* cleargraph()
+{
+	struct graph *g = new graph;
+	for (auto itr = g->edges.begin(); 
+         itr != g->edges.end(); itr++) 
+	{ 
+        cout << *itr << " "; 
+    } 
+}
+
 struct DV {
 	char node;
 	int min_dist;
@@ -152,6 +162,7 @@ void parseReceived(char buff[MAXLINE]) {
 			BellmanFord(g, node1.letter);
 			//Will need to write these to file 
 			//cout << buff << endl; create function writeDV(buff)
+			cout<<"Happy\n";
 			printdv(buff,sor);
 			forwardingtable(sor);
 			
@@ -610,10 +621,11 @@ void printtime(char src)
 void printdv(char dv[],char src)
 {
 	ofstream file;
+	string buf(dv);
 	string node(1,src);
 	string createtable = "Routing-output" + node + ".txt";
 	file.open(createtable, ios::app);
-	file<<dv;
+	file<<buf;
 	file.close();
 }
 
@@ -670,6 +682,8 @@ int main(int argc, char *argv[])
 
 	//Parse topology file
 	parseTopology(filename);
+
+	cleargraph();
 
 	initGraph();
 
