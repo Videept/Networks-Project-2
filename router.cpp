@@ -135,6 +135,9 @@ void parseReceived(char buff[MAXLINE]) {
 			s.erase(0, curr + 1);
 			// test parse received
 			//cout<<count <<"Source:"<<source <<" dest "<<dest <<"Cost "<< cost <<endl;
+			//timestamp
+			// output previous routing table here: 
+
 			if (insertEdge(g, sor, des, cost) == 1) {
 				nochange++;
 			}
@@ -142,8 +145,9 @@ void parseReceived(char buff[MAXLINE]) {
 		if (nochange !=8) {
 			BellmanFord(g, node1.letter);
 			//Will need to write these to file 
+			//cout << buff << endl; create function writeDV(buff)
 			writedvtable(node1.letter);
-			cout << buff << endl;
+			
 		}
 		else {
 			if (converge != -1) {
@@ -321,7 +325,6 @@ void handlePacket(char buffer[MAXLINE]) {
 	//cout <<"This is in buffer\n"<< buffer << endl;
 	int dPort = stoi(destPort);
 	
-	
 	if (dPort == node1.pNum) {
 		cout << "Packet arrived at dest: " << buffer << endl;
 	}
@@ -399,7 +402,8 @@ void parseTopology(char* file) {
 				node1.numConnec++;
 				tableFile >> dest >> portNum >> cost;
 
-				neighbour[node1.numConnec - 1].letter = dest; neighbour[node1.numConnec - 1].pNum = portNum;
+				neighbour[node1.numConnec - 1].letter = dest; 
+				neighbour[node1.numConnec - 1].pNum = portNum;
 				neighbour[node1.numConnec - 1].cost = cost;
 			}
 			else {
@@ -567,7 +571,7 @@ void forwardingtable()
 	router exrouter;
 	char src(exrouter.src);
 	string createtable = "Routing-output" + src;
-	file.open(createtable, ios::out);
+	file.open(createtable, ios::app);
 	if (!file)
 	{
 		cout << "Error in creating file!!!";
@@ -595,15 +599,25 @@ void forwardingtable()
 }
 
 void writedvtable(char src) {
-	cout << "ROUTER        SHORTEST_DISTANCE                PREV_NODE\n";
+	ofstream file;
+	cout<<"hello";
+	char fail='N';
+	string node(1,src);
+	cout<<"Port is "<<node;
+	string createtable = ("Routing-output"+node+".txt");
+	file.open(createtable,ios::out);
+	file << "ROUTER"<<"\t\t\t"<<"SHORTEST_DISTANCE"<<"\t\t\t\t"<<"PREV_NODE\n";
 	for (int i = 0; i < MAX_ROUTERS; i++) {
 		if (dvtable[i].node != -1) {
-			if (dvtable[i].node == src)
-				cout << dvtable[i].node << "\t\t\t" << dvtable[i].min_dist << "\t\t\t\t*\n";
+			if(dvtable[i].min_dist==10000)
+				dvtable[i].nextNode=fail;
+			else if (dvtable[i].node == src)
+				file << dvtable[i].node << "\t\t\t\t" << dvtable[i].min_dist << "\t\t\t\t*\n";
 			else
-				cout << dvtable[i].node << "\t\t\t" << dvtable[i].min_dist << "\t\t\t\t" << dvtable[i].nextNode << "\n";
+				file << dvtable[i].node << "\t\t\t\t" << dvtable[i].min_dist << "\t\t\t\t\t\t\t\t" << dvtable[i].nextNode << "\n";
 		}
 	}
+	file.close();
 }
 
 void printgraph(struct graph* g) {
