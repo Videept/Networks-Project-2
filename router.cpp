@@ -35,6 +35,9 @@ int findNext(int destP);
 void updateTime(char node);
 void removeNode(int node);
 void reAppear(char dis, int weight);
+void printdv(char dv[], char src);
+void forwardingtable(char src);
+void printtime(char src);
 
 // Some sort of structure or class will be needed to keep details about 
 // immediate neighbours
@@ -99,6 +102,7 @@ void parseReceived(char buff[MAXLINE]) {
 	// It will need to check if to see if there has been a change- call add edge 
 
 	string source, dest, tempCost;
+	fstream file;
 	char sor, des;
 	int cost;
 	int nochange = 0;
@@ -136,7 +140,9 @@ void parseReceived(char buff[MAXLINE]) {
 			// test parse received
 			//cout<<count <<"Source:"<<source <<" dest "<<dest <<"Cost "<< cost <<endl;
 			//timestamp
+			printtime(sor);
 			// output previous routing table here: 
+			forwardingtable(sor);
 
 			if (insertEdge(g, sor, des, cost) == 1) {
 				nochange++;
@@ -146,7 +152,8 @@ void parseReceived(char buff[MAXLINE]) {
 			BellmanFord(g, node1.letter);
 			//Will need to write these to file 
 			//cout << buff << endl; create function writeDV(buff)
-			writedvtable(node1.letter);
+			printdv(buff,sor);
+			forwardingtable(sor);
 			
 		}
 		else {
@@ -564,46 +571,56 @@ int insertEdge(struct graph* g, char src, char dest, int cost) {
 	return flag;
 }
 
-void forwardingtable()
+void clearfile(char src)
 {
-	fstream file;
+	ofstream file;
+	string node(1,src);
+	string createtable = "Routing-output" + node + ".txt";
+	file.open(createtable, ios::out|ios::trunc);
+	file.close();
+}
+
+void forwardingtable(char src)
+{
+	ofstream file;
 	char base = 'A';
-	router exrouter;
-	char src(exrouter.src);
-	string createtable = "Routing-output" + src;
+	string node(1,src);
+	string createtable = "Routing-output" + node + ".txt";
 	file.open(createtable, ios::app);
-	if (!file)
+	file << "Destination" << "\t\t" << "Cost" << "\t\t" << "Outgoing UDP Port" << "\t\t" << "Destination UDP Port";
+	for (int i = 0; i < MAX_ROUTERS; i++)
 	{
-		cout << "Error in creating file!!!";
+		if (dvtable[i].node != src)
+			file << dvtable[i].node << "\t\t\t" << dvtable[i].min_dist << "\t\t\t"<<1000 + int(src) - int(base) <<"\t\t\t" <<1000 + int(dvtable[1].node) - int(base) << "\n";
 	}
-	// declaring argument of time() 
-	time_t my_time = time(NULL);
+	file.close();
+}
 
-	// ctime() used to give the present time 
-	printf("Time of update is %s", ctime(&my_time));
+void printtime(char src)
+{
+	ofstream file;
+	string node(1,src);
+	string createtable = "Routing-output" + node + ".txt";
+	file.open(createtable, ios::app);
+	time_t my_time = time(NULL); 
+    file<<"Time is "<<ctime(&my_time); 
+	file.close();
+}
 
-	if (file.is_open())
-	{
-		file << "DV Source" << exrouter.src << endl;
-		file << "Destination" << "\t" << "Cost" << "\t" << "Outgoing UDP Port" << "\t" << "Destination UDP Port";
-		for (int i = 0; i < MAX_ROUTERS; i++)
-		{
-			if (dvtable[i].node != exrouter.src)
-				file << dvtable[i].node << "\t" << dvtable[i].min_dist << 1000 + int(src) - int(base) << 1000 + int(dvtable[1].node) - int(base) << "\n";
-		}
-	}
-	else
-	{
-		cout << "Error in writing to file";
-	}
+void printdv(char dv[],char src)
+{
+	ofstream file;
+	string node(1,src);
+	string createtable = "Routing-output" + node + ".txt";
+	file.open(createtable, ios::app);
+	file<<dv;
+	file.close();
 }
 
 void writedvtable(char src) {
 	ofstream file;
-	cout<<"hello";
 	char fail='N';
 	string node(1,src);
-	cout<<"Port is "<<node;
 	string createtable = ("Routing-output"+node+".txt");
 	file.open(createtable,ios::out);
 	file << "ROUTER"<<"\t\t\t"<<"SHORTEST_DISTANCE"<<"\t\t\t\t"<<"PREV_NODE\n";
@@ -646,10 +663,10 @@ int main(int argc, char *argv[])
 			node1.letter = argv[2][0];
 		}
 	}
-
 	// Convert letter to int port number 
 	node1.pNum = node1.letter + 9935;
 	cout << "Port Number: " << node1.pNum << endl;
+	clearfile(node1.letter);
 
 	//Parse topology file
 	parseTopology(filename);

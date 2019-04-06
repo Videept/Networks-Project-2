@@ -1,6 +1,2062 @@
-ROUTER			SHORTEST_DISTANCE				PREV_NODE
-A				0				*
-B				4								A
-C				7								B
-E				1								A
-F				5								B
+Time is Sat Apr  6 19:05:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+DV (A,A,0)(A,B,4)(A,C,10000)(A,D,10000)(A,E,1)(A,F,10000)(A,G,10000)(A,H,10000)Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+DV (A,A,0)(A,B,4)(A,C,7)(A,D,10000)(A,E,1)(A,F,5)(A,G,10000)(A,H,10000)Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:05:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:06:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:21 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:26 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:41 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:46 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:51 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:07:56 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:01 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:06 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:11 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
+Time is Sat Apr  6 19:08:16 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortB			0			1000			1001
+C			3			1000			1001
+D			10000			1000			1001
+E			2			1000			1001
+F			1			1000			1001
+G			10000			1000			1001
+H			10000			1000			1001
