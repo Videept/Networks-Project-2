@@ -599,7 +599,7 @@ void forwardingtable(char src)
 	string node(1,src);
 	string createtable = "Routing-output" + node + ".txt";
 	file.open(createtable, ios::app);
-	file << "Destination" << "\t\t" << "Cost" << "\t\t" << "Outgoing UDP Port" << "\t\t" << "Destination UDP Port";
+	file << "Destination" << "\t\t" << "Cost" << "\t\t" << "Outgoing UDP Port" << "\t\t" << "Destination UDP Port \n";
 	for (int i = 0; i < MAX_ROUTERS; i++)
 	{
 		if (dvtable[i].node != src && dvtable[i].min_dist!=10000)
