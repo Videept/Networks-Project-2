@@ -600,7 +600,7 @@ void forwardingtable(char src)
 	for (int i = 0; i < MAX_ROUTERS; i++)
 	{
 		if (dvtable[i].node != src && dvtable[i].min_dist!=10000)
-			file << dvtable[i].node << "\t\t\t\t" << dvtable[i].min_dist << "\t\t\t\t"<<1000 + int(src) - int(base) <<"\t\t\t\t" <<1000 + int(dvtable[i].node) - int(base) << "\n";
+			file << dvtable[i].node << "\t\t\t\t" << dvtable[i].min_dist << "\t\t\t\t"<<1000 + int(src) - int(base) <<"\t\t\t\t\t\t" <<1000 + int(dvtable[i].node) - int(base) << "\n";
 	}
 	file.close();
 }
