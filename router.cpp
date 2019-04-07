@@ -88,14 +88,9 @@ struct graph* initGraph()
 	return g;
 }
 
-struct graph* cleargraph()
+void cleargraph(graph *g)
 {
-	struct graph *g = new graph;
-	for (auto itr = g->edges.begin(); 
-         itr != g->edges.end(); itr++) 
-	{ 
-        cout << *itr << " "; 
-    } 
+	vector<struct edge*>().swap(g->edges);
 }
 
 struct DV {
@@ -234,6 +229,8 @@ void removeNode(int node) {
 	}
 
 	node1.numConnec = node1.numConnec - 1;
+
+	cleargraph(g);
 
 	initGraph();
 
@@ -616,7 +613,7 @@ void printtime(char src)
 	file.open(createtable, ios::app);
 	file<<"\n";
 	time_t my_time = time(NULL); 
-    file<<"Time is "<<ctime(&my_time); 
+  file<<"Time is "<<ctime(&my_time); 
 	file.close();
 }
 
@@ -684,9 +681,7 @@ int main(int argc, char *argv[])
 
 	//Parse topology file
 	parseTopology(filename);
-
-	cleargraph();
-
+	
 	initGraph();
 
 	for (int i = 0; i < node1.numConnec; i++) {
