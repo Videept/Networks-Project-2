@@ -1,9 +1,10 @@
 
-Time is Sun Apr  7 16:32:34 2019
+Time is Sun Apr  7 16:37:04 2019
 Destination		Cost		Outgoing UDP Port		Destination UDP Port 
 A				0				1001				1000
 E				1				1001				1004
-DV (B,A,4)(B,B,0)(B,C,3)(B,D,10000)(B,E,2)(B,F,1)(B,G,10000)(B,H,10000)Destination		Cost		Outgoing UDP Port		Destination UDP Port 
+DV (B,A,4)(B,B,0)(B,C,3)(B,D,10000)(B,E,2)(B,F,1)(B,G,10000)(B,H,10000)
+Destination		Cost		Outgoing UDP Port		Destination UDP Port 
 A				0				1001				1000
 C				7				1001				1002
 E				1				1001				1004

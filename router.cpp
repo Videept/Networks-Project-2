@@ -627,7 +627,7 @@ void printdv(char dv[],char src)
 	string node(1,src);
 	string createtable = "Routing-output" + node + ".txt";
 	file.open(createtable, ios::app);
-	file<<buf;
+	file<<buf<<"\n";
 	file.close();
 }
 
