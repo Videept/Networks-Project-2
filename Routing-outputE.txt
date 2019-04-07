@@ -1,0 +1,90 @@
+Time is Sun Apr  7 15:24:31 2019
+Time is Sun Apr  7 15:24:31 2019
+Time is Sun Apr  7 15:24:31 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			4			1004			1001
+B			0			1004			1001
+C			3			1004			1001
+D			7			1004			1001
+F			1			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			10000			1004			1001
+B			1			1004			1001
+C			1			1004			1001
+D			3			1004			1001
+F			0			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			0			1004			1001
+B			4			1004			1001
+C			10000			1004			1001
+D			10000			1004			1001
+F			10000			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+DV (E,A,1)(E,B,2)(E,C,10000)(E,D,10000)(E,E,0)(E,F,3)(E,G,10000)(E,H,10000)DV (E,A,1)(E,B,2)(E,C,10000)(E,D,10000)(E,E,0)(E,F,3)(E,G,10000)(E,H,10000)Destination		Cost		Outgoing UDP Port		Destination UDP PortA			3			1004			1001
+B			0			1004			1001
+C			3			1004			1001
+D			7			1004			1001
+F			1			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			4			1004			1001
+B			1			1004			1001
+C			1			1004			1001
+D			3			1004			1001
+F			0			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+DV (E,A,1)(E,B,2)(E,C,10000)(E,D,10000)(E,E,0)(E,F,3)(E,G,10000)(E,H,10000)Destination		Cost		Outgoing UDP Port		Destination UDP PortA			0			1004			1001
+B			3			1004			1001
+C			10000			1004			1001
+D			10000			1004			1001
+F			4			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+Time is Sun Apr  7 15:24:36 2019
+Time is Sun Apr  7 15:24:36 2019
+Time is Sun Apr  7 15:24:36 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			4			1004			1001
+B			1			1004			1001
+C			1			1004			1001
+D			3			1004			1001
+F			0			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			3			1004			1001
+B			0			1004			1001
+C			2			1004			1001
+D			4			1004			1001
+F			1			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			0			1004			1001
+B			3			1004			1001
+C			5			1004			1001
+D			7			1004			1001
+F			4			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+DV (E,A,1)(E,B,2)(E,C,4)(E,D,6)(E,E,0)(E,F,3)(E,G,10000)(E,H,10000)DV (E,A,1)(E,B,2)(E,C,4)(E,D,6)(E,E,0)(E,F,3)(E,G,10000)(E,H,10000)DV (E,A,1)(E,B,2)(E,C,4)(E,D,6)(E,E,0)(E,F,3)(E,G,10000)(E,H,10000)Destination		Cost		Outgoing UDP Port		Destination UDP PortA			4			1004			1001
+B			1			1004			1001
+C			1			1004			1001
+D			3			1004			1001
+F			0			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			0			1004			1001
+B			3			1004			1001
+C			5			1004			1001
+D			7			1004			1001
+F			4			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			3			1004			1001
+B			0			1004			1001
+C			2			1004			1001
+D			4			1004			1001
+F			1			1004			1001
+G			10000			1004			1001
+H			10000			1004			1001

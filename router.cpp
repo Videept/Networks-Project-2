@@ -150,19 +150,20 @@ void parseReceived(char buff[MAXLINE]) {
 			// test parse received
 			//cout<<count <<"Source:"<<source <<" dest "<<dest <<"Cost "<< cost <<endl;
 			//timestamp
-			printtime(sor);
+			
 			// output previous routing table here: 
-			forwardingtable(sor);
+			
 
 			if (insertEdge(g, sor, des, cost) == 1) {
 				nochange++;
 			}
 		}
 		if (nochange !=8) {
+			printtime(sor);
+			forwardingtable(sor);
 			BellmanFord(g, node1.letter);
 			//Will need to write these to file 
 			//cout << buff << endl; create function writeDV(buff)
-			cout<<"Happy\n";
 			printdv(buff,sor);
 			forwardingtable(sor);
 			
@@ -601,8 +602,8 @@ void forwardingtable(char src)
 	file << "Destination" << "\t\t" << "Cost" << "\t\t" << "Outgoing UDP Port" << "\t\t" << "Destination UDP Port";
 	for (int i = 0; i < MAX_ROUTERS; i++)
 	{
-		if (dvtable[i].node != src)
-			file << dvtable[i].node << "\t\t\t" << dvtable[i].min_dist << "\t\t\t"<<1000 + int(src) - int(base) <<"\t\t\t" <<1000 + int(dvtable[1].node) - int(base) << "\n";
+		if (dvtable[i].node != src && dvtable[i].min_dist!=10000)
+			file << dvtable[i].node << "\t\t\t\t" << dvtable[i].min_dist << "\t\t\t\t"<<1000 + int(src) - int(base) <<"\t\t\t\t" <<1000 + int(dvtable[i].node) - int(base) << "\n";
 	}
 	file.close();
 }
@@ -613,6 +614,7 @@ void printtime(char src)
 	string node(1,src);
 	string createtable = "Routing-output" + node + ".txt";
 	file.open(createtable, ios::app);
+	file<<"\n";
 	time_t my_time = time(NULL); 
     file<<"Time is "<<ctime(&my_time); 
 	file.close();

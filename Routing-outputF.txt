@@ -1,0 +1,60 @@
+Time is Sun Apr  7 15:24:32 2019
+Time is Sun Apr  7 15:24:32 2019
+Time is Sun Apr  7 15:24:32 2019
+Time is Sun Apr  7 15:24:32 2019
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			3			1005			1001
+B			0			1005			1001
+C			3			1005			1001
+D			7			1005			1001
+E			2			1005			1001
+G			10000			1005			1001
+H			10000			1005			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			10000			1005			1001
+B			7			1005			1001
+C			4			1005			1001
+D			0			1005			1001
+E			10000			1005			1001
+G			10000			1005			1001
+H			10000			1005			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			1			1005			1001
+B			2			1005			1001
+C			10000			1005			1001
+D			10000			1005			1001
+E			0			1005			1001
+G			10000			1005			1001
+H			10000			1005			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			10000			1005			1001
+B			3			1005			1001
+C			0			1005			1001
+D			4			1005			1001
+E			10000			1005			1001
+G			10000			1005			1001
+H			10000			1005			1001
+DV (F,A,4)(F,B,1)(F,C,1)(F,D,3)(F,E,3)(F,F,0)(F,G,10000)(F,H,10000)DV (F,A,4)(F,B,1)(F,C,1)(F,D,3)(F,E,3)(F,F,0)(F,G,10000)(F,H,10000)DV (F,A,4)(F,B,1)(F,C,1)(F,D,3)(F,E,3)(F,F,0)(F,G,10000)(F,H,10000)DV (F,A,4)(F,B,1)(F,C,1)(F,D,3)(F,E,3)(F,F,0)(F,G,10000)(F,H,10000)Destination		Cost		Outgoing UDP Port		Destination UDP PortA			3			1005			1001
+B			0			1005			1001
+C			2			1005			1001
+D			4			1005			1001
+E			2			1005			1001
+G			10000			1005			1001
+H			10000			1005			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			7			1005			1001
+B			4			1005			1001
+C			4			1005			1001
+D			0			1005			1001
+E			6			1005			1001
+G			10000			1005			1001
+H			10000			1005			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			5			1005			1001
+B			2			1005			1001
+C			0			1005			1001
+D			4			1005			1001
+E			4			1005			1001
+G			10000			1005			1001
+H			10000			1005			1001
+Destination		Cost		Outgoing UDP Port		Destination UDP PortA			1			1005			1001
+B			2			1005			1001
+C			4			1005			1001
+D			6			1005			1001
+E			0			1005			1001
+G			10000			1005			1001
+H			10000			1005			1001
