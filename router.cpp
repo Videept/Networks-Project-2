@@ -705,8 +705,7 @@ int main(int argc, char *argv[])
 	thread dispatch(send_th);
 	thread check(checkTime_th);
 	thread inject(injectPacket_th);
-	cout << g->V << endl;
-
+	
 	// Wait until
 	dispatch.join();
 	recv.join();
