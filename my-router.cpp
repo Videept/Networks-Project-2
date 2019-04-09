@@ -25,6 +25,8 @@ using namespace std;
 struct sockaddr_in cliaddr, servaddr;
 int udpfd;
 int removed=6;
+char *filename;
+
 string createDV();
 int insertEdge(struct graph* g, char src, char dest, int cost);
 void BellmanFord(struct graph* g, int src);
@@ -39,7 +41,7 @@ void printdv(char dv[], char src);
 void forwardingtable(char src);
 void printtime(char src);
 void graphDelete (graph* g);
-
+void parseTopology(char* file);
 // Some sort of structure or class will be needed to keep details about 
 // immediate neighbours
 
@@ -80,13 +82,13 @@ struct router
 //struct graph* maingraph;
 graph *g = (struct graph*)malloc(sizeof(struct graph));
 
-struct graph* initGraph()
+void initGraph()
 {
-	struct graph* g = new graph;
+	//struct graph* g = new graph;
 	g->E = 0;
 	g->V = 0;
 	g->edges.resize(0);
-	return g;
+	//return g;
 }
 
 void cleargraph(graph *g)
@@ -95,18 +97,16 @@ void cleargraph(graph *g)
 }
 void graphDelete(graph *g)
 {
-	cout << "\n! ! ! ***** In graph delete  *****! ! ! \n  "; 
+	//cout << "\n! ! ! ***** In graph delete  *****! ! ! \n  "; 
 	for (int i = 0; i < g->edges.size(); i++) {
 
 		free(g->edges[i]);
-		// free(g->E);
-		// free(g->V);
 		// >src << " Ending node:C" << g->edges[i]->dest << " Weight " << g->edges[i]->cost << endl;
 	}
 
 	 g->edges.resize(0);
-	 cout<< "After delete: "<< g->edges.size() <<endl;
-	//vector<struct edge*>().swap(g->edges);
+	// cout<< "After delete: "<< g->edges.size() <<endl;
+
 
 
 }
@@ -164,14 +164,15 @@ void parseReceived(char buff[MAXLINE]) {
 			//timestamp
 			
 			// output previous routing table here: 
-			
+	
 
 			if (insertEdge(g, sor, des, cost) == 1) {
 				nochange++;
 			}
 		}
-		if (nochange != (removed)) {
-			cout<<removed;
+		//cout<<"No change: "<<nochange<<endl;
+		if (nochange != removed) {
+		//	cout<<"Remoed:"<<removed;
 			printtime(node1.letter);
 			forwardingtable(node1.letter);
 			BellmanFord(g, node1.letter);
@@ -182,10 +183,14 @@ void parseReceived(char buff[MAXLINE]) {
 			//writedvtable(node1.lett);
 			
 		}
+		//if(nochange==removed){
+		//	converge=0;
+		//}
 		else {
 			if (converge != -1) {
 				cout << "Enter Packet Destination: " << endl;
 				converge = -1;
+	
 			}
 		}
 	}
@@ -206,12 +211,34 @@ void reAppear(char dis, int weight) {
 	}
 	if (x == node1.numConnec) {
 		cout << "New neighbour appeared: " << dis << endl;
-		node1.numConnec = node1.numConnec + 1;
-		neighbour[node1.numConnec].letter = dis;
+		memset(neighbour,0,sizeof(neighbour));
+		memset(&node1.numConnec, 0, sizeof(node1.numConnec));
+		parseTopology(filename);
+
+		//node1.numConnec = node1.numConnec + 1;
+		/*neighbour[node1.numConnec].letter = dis;
 		neighbour[node1.numConnec].cost = weight;
 		neighbour[node1.numConnec].pNum = port1;
-		time(&neighbour[node1.numConnec].time);
+		time(&neighbour[node1.numConnec].time);*/
+		
+		
+		graphDelete(g);
+
+		initGraph();
+
+	for (int i = 0; i < node1.numConnec; i++) {
+		insertEdge(g, node1.letter, neighbour[i].letter, neighbour[i].cost);
+		time(&neighbour[i].time);
 	}
+ 
+	converge=0; 
+	char rem[]="Node Added";
+	
+	printdv(rem,node1.letter);
+
+	BellmanFord(g, node1.letter);
+	}
+
 
 }
 
@@ -247,7 +274,7 @@ void checkTime_th() {
 void removeNode(int node) {
 	
 	for (int j = node; j < MAX_ROUTERS; ++j) {
-		dvtable[j] = dvtable[j + 1];
+		neighbour[j] = neighbour[j + 1];
 	}
 
 	node1.numConnec = node1.numConnec - 1;
@@ -255,21 +282,23 @@ void removeNode(int node) {
 	//	cleargraph(g);
 
 	graphDelete(g);
-	cout << "\n Testing -- Past graph delete \n "; 
+
 	initGraph();
-	forwardingtable(node1.letter);
+
+
 	for (int i = 0; i < node1.numConnec; i++) {
 		insertEdge(g, node1.letter, neighbour[i].letter, neighbour[i].cost);
 		time(&neighbour[i].time);
 	}
-	forwardingtable(node1.letter);
+
 	converge=0; 
 	char rem[]="Node Removed";
 	printdv(rem,node1.letter);
 
 	BellmanFord(g, node1.letter);
-	removed = removed-1 ;
-	cout <<"test- past bellman ford \n \n ";
+	//forwardingtable(node1.letter);
+	//removed = removed-1 ;
+//	cout <<"test- past bellman ford \n \n ";
 }
 
 
@@ -334,7 +363,9 @@ void injectPacket_th() {
 	string header = "PCK ";
 	string des = "Dest:";
 	string newl = "\n";
+for(;;){
 
+	cout<<"Enter packet dest: "<<endl;
 	cin >> pckDest;
 
 	packet = header + des + to_string(pckDest) + newl + body;
@@ -349,6 +380,7 @@ void injectPacket_th() {
 	cliaddr.sin_port = htons(nextID);
 	sendto(udpfd, packet.c_str(), packet.length(), 0,
 		(struct sockaddr*)&cliaddr, sizeof(cliaddr));
+}
 
 }
 
@@ -368,12 +400,17 @@ void handlePacket(char buffer[MAXLINE]) {
 	p.erase(0, cur+1);
 	cur = p.find("\n");
 	destPort = p.substr(0, cur);
-	//cout << "Packet destination: " << destPort << endl;
+	cout << "Packet destination: " << destPort << endl;
 	//cout <<"This is in buffer\n"<< buffer << endl;
 	int dPort = stoi(destPort);
 	
 	if (dPort == node1.pNum) {
-		cout << "Packet arrived at dest: " << buffer << endl;
+		//cout << "Packet arrived at dest: " << buffer << endl;
+		string psend2 = "Packet has arrived: " + string(buffer);
+		char send2[150];
+		strcpy(send2,psend2.c_str());
+		printdv(send2,node1.letter);
+
 	}
 	else {
 		int nextNode = findNext(dPort);
@@ -381,6 +418,10 @@ void handlePacket(char buffer[MAXLINE]) {
 		sendto(udpfd, forward.c_str(), forward.length(), 0,
 			(struct sockaddr*)&cliaddr, sizeof(cliaddr));
 		cout << "Packet sent to port: "<<dPort<<  endl;
+		string psend = "Packet sent to port: " + destPort;
+		char send1[50];
+		strcpy(send1,psend.c_str());
+		printdv(send1,node1.letter);
 	}
 
 }
@@ -407,7 +448,8 @@ void send_th() {
 			cliaddr.sin_port = htons(neighbour[i].pNum);
 			sendto(udpfd, message.c_str(), message.length(), 0,
 				(struct sockaddr*)&cliaddr, sizeof(cliaddr));
-			//cout << "Sent message to port: " << neighbour[i].pNum << endl;
+			//cout << "Sent message to port: " << neighbour[i].pNum <<endl;
+			/* code */// endl;
 
 		}
 
@@ -417,7 +459,7 @@ void send_th() {
 }
 
 void parseTopology(char* file) {
-	// From topology file we are only interested in direct neigbours
+	// From topology file we are only interested in direct neigbours/* code */
 	// We will receive other neighbours from exchanging DVs
 	// If sub string 0 is equal to A then parse that line etc
 	// i.e. parse only lies beginning with 'A'
@@ -462,7 +504,7 @@ void parseTopology(char* file) {
 		}
 
 	}
-	cout << "\n The number of directly connected neighbours is :" << node1.numConnec << endl;
+	cout << "\nThe number of directly connected neighbours is :" << node1.numConnec << endl<< "Direct neighbours:\n";
 	tableFile.close();
 
 }
@@ -511,8 +553,10 @@ void BellmanFord(struct graph* g, int src)
 	// Step 2: Relax all edges |V| - 1 times.
 	for (int i = 1; i <= V - 1; i++)
 	{
+
 		for (int j = 0; j < E; j++)
 		{
+		
 			int u = g->edges[j]->src;
 			int v = g->edges[j]->dest;
 			int cost = g->edges[j]->cost;
@@ -587,6 +631,14 @@ int insertEdge(struct graph* g, char src, char dest, int cost) {
 						g->edges[i]->cost = cost;
 						flag = 2;
 					}
+					if(g->edges[i]->cost>=17&&g->edges[i]->dest == dest)
+					{
+						//g->edges[i]->cost=10000;
+					
+						flag=1; 
+					}
+					
+					
 				}
 			}
 		}
@@ -630,9 +682,11 @@ void forwardingtable(char src)
 	file << "Destination" << "\t\t" << "Cost" << "\t\t" << "Outgoing UDP Port" << "\t\t" << "Destination UDP Port \n";
 	for (int i = 0; i < MAX_ROUTERS; i++)
 	{
-		if (dvtable[i].node != src && dvtable[i].min_dist!=10000)
-			file << dvtable[i].node << "\t\t\t\t" << dvtable[i].min_dist << "\t\t\t\t"<<1000 + int(src) - int(base) <<"\t\t\t\t\t\t" <<1000 + int(dvtable[i].node) - int(base) << "\n";
+		if (dvtable[i].node != src && dvtable[i].min_dist<15){
+			file << dvtable[i].node << "\t\t\t\t" << dvtable[i].min_dist << "\t\t\t\t"<<10000 + int(src) - int(base) <<"\t\t\t\t\t\t" <<10000 + int(dvtable[i].node) - int(base) << "\n";
+		}
 	}
+	
 	file.close();
 }
 
@@ -687,9 +741,10 @@ void printgraph(struct graph* g) {
 	}
 }
 
+
 int main(int argc, char *argv[])
 {
-	char *filename;
+	
 	char r_name;
 
 	if (argc > 1) {
@@ -706,7 +761,7 @@ int main(int argc, char *argv[])
 			node1.letter = argv[2][0];
 		}
 	}
-	cout<< "At beginning: "<< g->edges.size() <<endl;
+	//cout<< "At beginning: "<< g->edges.size() <<endl;
 	// Convert letter to int port number 
 	node1.pNum = node1.letter + 9935;
 	cout << "Port Number: " << node1.pNum << endl;
@@ -722,14 +777,17 @@ int main(int argc, char *argv[])
 		time(&neighbour[i].time);
 	}
 
-	printgraph(g);
+	//printgraph(g);
 
 	BellmanFord(g, node1.letter);
 
 
 
 	for (int i = 0; i < MAX_ROUTERS; i++) {
-		cout << " Node " << dvtable[i].node << " Dist: " << dvtable[i].min_dist << " Next: " << dvtable[i].nextNode << endl;
+		if (dvtable[i].min_dist !=10000 && dvtable[i].min_dist !=0 ){
+		cout << "		 Node " << dvtable[i].node << " Dist: " << dvtable[i].min_dist << endl; 
+		//" Next: " << dvtable[i].nextNode << endl;
+		}
 	}
 
 
